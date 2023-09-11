@@ -82,12 +82,11 @@ namespace taskmanagerapp.Models
 
         public bool UpdateTarefa(TarefaModel tarefaModel)
         {
-            Tarefa tarefa = new Tarefa();
             bool updated = false;
 
             if (tarefaModel.Id > 0)
             {
-                tarefa = _dbContext.Tarefas.Where(t => t.Id.Equals(tarefaModel.Id)).FirstOrDefault();
+                var tarefa = _dbContext.Tarefas.Where(t => t.Id.Equals(tarefaModel.Id)).FirstOrDefault();
 
                 if (tarefa != null)
                 {
