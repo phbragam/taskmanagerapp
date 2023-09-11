@@ -16,7 +16,6 @@ namespace taskmanagerapp.Controllers
             _dbHelper = new TarefasDbHelper(taskManagerDbContext);
         }
 
-        // GET: api/<TaskManagerApiController>
         [HttpGet]
         [Route("api/[controller]/GetTarefas")]
         public IActionResult Get()
@@ -35,7 +34,6 @@ namespace taskmanagerapp.Controllers
             }
         }
 
-        // GET api/<TaskManagerApiController>/5
         [HttpGet]
         [Route("api/[controller]/GetTarefaById/{id}")]
         public IActionResult Get(int id)
@@ -54,7 +52,6 @@ namespace taskmanagerapp.Controllers
             }
         }
 
-        // GET: api/<TaskManagerApiController>
         [HttpGet]
         [Route("api/[controller]/GetTarefaByUsuarioId/{idUsuario}")]
         public IActionResult GetByUsuario(int idUsuario)
@@ -73,7 +70,6 @@ namespace taskmanagerapp.Controllers
             }
         }
 
-        // POST api/<TaskManagerApiController>
         [HttpPost]
         [Route("api/[controller]/CreateTarefa")]
         public IActionResult Post([FromBody] TarefaModel tarefaModel)
@@ -85,9 +81,9 @@ namespace taskmanagerapp.Controllers
                 if (!created)
                 {
                     type = ResponseType.BadRequest;
-                    return BadRequest(ResponseHandler.GetAppResponse(type, "Erro ao atualizar"));
+                    return BadRequest(ResponseHandler.GetAppResponse(type, "Erro ao criar"));
                 }
-                return Ok(ResponseHandler.GetAppResponse(type, tarefaModel));
+                return Ok(ResponseHandler.GetAppResponse(type, "Tarefa criada com sucesso"));
             }
             catch (Exception ex)
             {
@@ -96,7 +92,6 @@ namespace taskmanagerapp.Controllers
             }
         }
 
-        // PUT api/<TaskManagerApiController>/5
         [HttpPut("{id}")]
         [Route("api/[controller]/UpdateTarefa")]
         public IActionResult Put([FromBody] TarefaModel tarefaModel)
@@ -110,7 +105,7 @@ namespace taskmanagerapp.Controllers
                     type = ResponseType.BadRequest;
                     return BadRequest(ResponseHandler.GetAppResponse(type, "Erro ao atualizar"));
                 }
-                return Ok(ResponseHandler.GetAppResponse(type, tarefaModel));
+                return Ok(ResponseHandler.GetAppResponse(type, "Tarefa atualizada com sucesso"));
             }
             catch (Exception ex)
             {
@@ -119,7 +114,28 @@ namespace taskmanagerapp.Controllers
             }
         }
 
-        // DELETE api/<TaskManagerApiController>/5
+        [HttpPut("{id}")]
+        [Route("api/[controller]/UpdateEstadoTarefa")]
+        public IActionResult PutEstadoTarefa([FromBody] TarefaModel tarefaModel)
+        {
+            ResponseType type = ResponseType.Success;
+            try
+            {
+                bool updated = _dbHelper.UpdateEstadoTarefa(tarefaModel);
+                if (!updated)
+                {
+                    type = ResponseType.BadRequest;
+                    return BadRequest(ResponseHandler.GetAppResponse(type, "Erro ao atualizar"));
+                }
+                return Ok(ResponseHandler.GetAppResponse(type, "Estado da tarefa atualizado com sucesso"));
+            }
+            catch (Exception ex)
+            {
+                type = ResponseType.Failure;
+                return BadRequest(ResponseHandler.GetExceptionResponse(ex));
+            }
+        }
+
         [HttpDelete]
         [Route("api/[controller]/DeleteTarefa/{id}")]
         public IActionResult Delete(int id)
@@ -133,7 +149,7 @@ namespace taskmanagerapp.Controllers
                     type = ResponseType.Empty;
                     return Ok(ResponseHandler.GetAppResponse(type, "Tarefa não encontrada"));
                 }
-                return Ok(ResponseHandler.GetAppResponse(type, "Deletado com sucesso"));
+                return Ok(ResponseHandler.GetAppResponse(type, "Tarefa deletada com sucesso"));
             }
             catch (Exception ex)
             {

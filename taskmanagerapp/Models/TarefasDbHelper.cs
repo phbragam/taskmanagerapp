@@ -63,15 +63,15 @@ namespace taskmanagerapp.Models
         public bool CreateTarefa(TarefaModel tarefaModel)
         {
             Tarefa tarefa = new Tarefa();
+            var usuarioId = _dbContext.Usuarios.Where(u => u.Id.Equals(tarefaModel.UsuarioId)).FirstOrDefault();
             bool created = false;
 
-            if (tarefaModel.Id == 0)
+            if (tarefaModel.Id == 0 && usuarioId != null)
             {
-                // POST
                 tarefa.Titulo = tarefaModel.Titulo;
                 tarefa.Descricao = tarefaModel.Descricao;
                 tarefa.Estado = Estados.NAO_INICIADA;
-                tarefa.Usuario = _dbContext.Usuarios.Where(u => u.Id.Equals(tarefaModel.UsuarioId)).FirstOrDefault();
+                tarefa.Usuario = usuarioId;
                 _dbContext.Tarefas.Add(tarefa);
                 _dbContext.SaveChanges();
                 created = true;
@@ -90,17 +90,56 @@ namespace taskmanagerapp.Models
 
                 if (tarefa != null)
                 {
-                    // PUT
                     tarefa.Titulo = tarefaModel.Titulo;
                     tarefa.Descricao = tarefaModel.Descricao;
-                    // LOGICA PARA ATT ESTADO DA TAREFA AQUI
-                    tarefa.Estado = tarefaModel.Estado;
                     _dbContext.SaveChanges();
                     updated = true;
                 }
                 
             }
             return updated;
+        }
+
+        public bool UpdateEstadoTarefa(TarefaModel tarefaModel)
+        {
+            bool updated = false;
+
+            if (tarefaModel.Id > 0)
+            {
+                var tarefa = _dbContext.Tarefas.Where(t => t.Id.Equals(tarefaModel.Id)).FirstOrDefault();
+
+                if (tarefa != null && AbleToUpdate(tarefa.Estado, tarefaModel.Estado))
+                {
+                    tarefa.Estado = tarefaModel.Estado;
+                    _dbContext.SaveChanges();
+                    updated = true;
+                }
+
+            }
+            return updated;
+        }
+
+        public bool AbleToUpdate(Estados actualState, Estados toState)
+        {
+            bool canUpdate = false;
+
+            switch (actualState)
+            {
+                case Estados.NAO_INICIADA:
+                    if (toState == Estados.EM_PROGRESSO || toState == Estados.FINALIZADA || toState == Estados.ARQUIVADA) canUpdate = true;
+                    break;
+                case Estados.EM_PROGRESSO:
+                    if (toState == Estados.NAO_INICIADA || toState == Estados.FINALIZADA || toState == Estados.ARQUIVADA) canUpdate = true;
+                    break;
+                case Estados.FINALIZADA:
+                    if (toState == Estados.ARQUIVADA) canUpdate = true;
+                    break;
+                case Estados.ARQUIVADA:
+                    canUpdate = false;
+                    break;
+            }
+
+            return canUpdate;
         }
 
         public bool DeleteTarefa(int id)

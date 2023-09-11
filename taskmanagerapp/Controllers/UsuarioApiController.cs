@@ -68,7 +68,7 @@ namespace taskmanagerapp.Controllers
                     type = ResponseType.BadRequest;
                     return BadRequest(ResponseHandler.GetAppResponse(type, "Erro ao atualizar"));
                 }
-                return Ok(ResponseHandler.GetAppResponse(type, usuarioModel));
+                return Ok(ResponseHandler.GetAppResponse(type, "Usuario criado com sucesso"));
             }
             catch (Exception ex)
             {
@@ -91,7 +91,7 @@ namespace taskmanagerapp.Controllers
                     type = ResponseType.BadRequest;
                     return BadRequest(ResponseHandler.GetAppResponse(type, "Erro ao atualizar"));
                 }
-                return Ok(ResponseHandler.GetAppResponse(type, usuarioModel));
+                return Ok(ResponseHandler.GetAppResponse(type, "Usuario atualizado com sucesso"));
             }
             catch (Exception ex)
             {
@@ -114,7 +114,7 @@ namespace taskmanagerapp.Controllers
                     type = ResponseType.Empty;
                     return Ok(ResponseHandler.GetAppResponse(type, "Usuario não encontrado"));
                 }
-                return Ok(ResponseHandler.GetAppResponse(type, "Deletado com sucesso"));
+                return Ok(ResponseHandler.GetAppResponse(type, "Usuario deletado com sucesso"));
             }
             catch (Exception ex)
             {
