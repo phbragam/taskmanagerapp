@@ -111,7 +111,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Id\": 5,\r\n    \"Titulo\": \"Tarefa Editada\",\r\n    \"Descricao\": \"Descricao da Tarefa no Postman Editadaa\",\r\n    \"UsuarioId\": 1\r\n}",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"Titulo\": \"Tarefa Editada\",\r\n    \"Descricao\": \"Descricao da Tarefa no Editada\",\r\n    \"UsuarioId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Id\": 9,\r\n    \"Estado\": 2\r\n}",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"Estado\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -169,17 +169,8 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Id\": 2,\r\n    \"Titulo\": \"Tarefa Postman Editadaa\",\r\n    \"Descricao\": \"Descricao da Tarefa no Postman Editadaa\",\r\n    \"Estado\": 2,\r\n    \"UsuarioId\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://localhost:5067/api/TarefasApi/DeleteTarefa/4",
+							"raw": "http://localhost:5067/api/TarefasApi/DeleteTarefa/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -189,7 +180,7 @@
 								"api",
 								"TarefasApi",
 								"DeleteTarefa",
-								"4"
+								"1"
 							]
 						}
 					},
@@ -250,7 +241,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Usuario Teste\",\r\n    \"Email\": \"usuariospostmantest@gmail.com\",\r\n    \"Senha\": \"Teste123\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Usuario Teste\",\r\n    \"Email\": \"usuariosteste@gmail.com\",\r\n    \"Senha\": \"Teste123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -308,15 +299,6 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Id\": 2,\r\n    \"Titulo\": \"Tarefa Postman Editadaa\",\r\n    \"Descricao\": \"Descricao da Tarefa no Postman Editadaa\",\r\n    \"Estado\": 2,\r\n    \"UsuarioId\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://localhost:5067/api/UsuariosApi/DeleteUsuario/1",
 							"protocol": "http",

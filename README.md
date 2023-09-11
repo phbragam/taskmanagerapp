@@ -1,4 +1,4 @@
-# Task Manager API Calculator
+# Task Manager API 
 
 This is an API for a task manager app. You can use Postman to test and interact with this API. The API was developed using **.NET Core 6** in Visual Studio 2022.
 
@@ -12,9 +12,9 @@ This is an API for a task manager app. You can use Postman to test and interact 
 
 4. **Setup Connection Strings for Mysql**: Update your  DefaultConnection in appsettings.json (configured for connecting with MySQL DBMS using entity framework, if you want to use other, make sure to install the corresponding packages)
  
-5. **Run Initial Migrations**: Run `Add-Migration` and `Update-Database` in the Package Manager Console.
+5. **Run Initial Migrations**: Run `Update-Database` in the Package Manager Console.
 
-6. **Run the Server Locally**: Look for the port that the server is listening
+6. **Run the Server Locally**: Look for the port that the server is listening (configured for `5067` using Kestrel and `33437` using IIS Express).
 
 ## Making Requests in Postman
 
@@ -26,10 +26,9 @@ Follow these steps to make requests using Postman, after having the server runni
    - Open Postman.
    - Click the "Import".
    - Import `taskmanager.postman_collection.json` from `postmancollection` folder on this repository.
-   - Adjust the url to the port that the server is running and.
 
 3. **Configure the Request**:
-   - Adjust the url from the Postman Collection imports to the port that the server is running. 
+   - Adjust the url from the Postman Collection imports to localhost and port that the server is running (`http://localhost:{portNumber}/`). 
 
 4. **Send the Request**:
    - Click the "Send" button to send the request to the API.
