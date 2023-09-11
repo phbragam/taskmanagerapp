@@ -218,7 +218,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5067/api/UsuariosApi/GetUsuarioById/2",
+							"raw": "http://localhost:5067/api/UsuariosApi/GetUsuarioById/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -228,7 +228,7 @@
 								"api",
 								"UsuariosApi",
 								"GetUsuarioById",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -271,7 +271,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Id\": 2,\r\n    \"Nome\": \"Usuario Teste\",\r\n    \"Email\": \"usuariosteste@gmail.com\",\r\n    \"Senha\": \"Teste123\"\r\n}",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"Nome\": \"Usuario Teste\",\r\n    \"Email\": \"usuariosteste@gmail.com\",\r\n    \"Senha\": \"Teste123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
