@@ -8,12 +8,12 @@ namespace taskmanagerapp.Controllers
 {
 
     [ApiController]
-    public class TaskManagerApiController : ControllerBase
+    public class TarefasApiController : ControllerBase
     {
-        public readonly DbHelper _dbHelper;
-        public TaskManagerApiController(TaskManagerDbContext taskManagerDbContext)
+        public readonly TarefasDbHelper _dbHelper;
+        public TarefasApiController(TaskManagerDbContext taskManagerDbContext)
         {
-            _dbHelper = new DbHelper(taskManagerDbContext);
+            _dbHelper = new TarefasDbHelper(taskManagerDbContext);
         }
 
         // GET: api/<TaskManagerApiController>

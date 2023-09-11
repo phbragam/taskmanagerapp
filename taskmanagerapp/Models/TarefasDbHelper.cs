@@ -4,11 +4,11 @@ using taskmanagerapp.Utils;
 
 namespace taskmanagerapp.Models
 {
-    public class DbHelper
+    public class TarefasDbHelper
     {
         private TaskManagerDbContext _dbContext;
 
-        public DbHelper(TaskManagerDbContext dbContext) { _dbContext = dbContext; }
+        public TarefasDbHelper(TaskManagerDbContext dbContext) { _dbContext = dbContext; }
 
         // GET
         public List<TarefaModel> GetTarefas()
