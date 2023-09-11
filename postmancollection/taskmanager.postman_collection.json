@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "c5a97ebe-20fc-4ede-9880-bea09a622f05",
+		"name": "taskmanager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15445927"
+	},
+	"item": [
+		{
+			"name": "Tarefa",
+			"item": [
+				{
+					"name": "GET Tarefas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5067/api/TarefasApi/GetTarefas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"TarefasApi",
+								"GetTarefas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tarefa by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5067/api/TarefasApi/GetTarefaById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"TarefasApi",
+								"GetTarefaById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tarefa by IdUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5067/api/TarefasApi/GetTarefaByUsuarioId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"TarefasApi",
+								"GetTarefaByUsuarioId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Tarefa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Titulo\": \"Tarefa teste\",\r\n    \"Descricao\": \"Descricao da Tarefa\",\r\n    \"UsuarioId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5067/api/TarefasApi/CreateTarefa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"TarefasApi",
+								"CreateTarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Tarefa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 5,\r\n    \"Titulo\": \"Tarefa Editada\",\r\n    \"Descricao\": \"Descricao da Tarefa no Postman Editadaa\",\r\n    \"UsuarioId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5067/api/TarefasApi/UpdateTarefa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"TarefasApi",
+								"UpdateTarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Estado Tarefa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 9,\r\n    \"Estado\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5067/api/TarefasApi/UpdateEstadoTarefa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"TarefasApi",
+								"UpdateEstadoTarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Tarefa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 2,\r\n    \"Titulo\": \"Tarefa Postman Editadaa\",\r\n    \"Descricao\": \"Descricao da Tarefa no Postman Editadaa\",\r\n    \"Estado\": 2,\r\n    \"UsuarioId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5067/api/TarefasApi/DeleteTarefa/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"TarefasApi",
+								"DeleteTarefa",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "GET Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5067/api/UsuariosApi/GetUsuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"UsuariosApi",
+								"GetUsuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Usuario by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5067/api/UsuariosApi/GetUsuarioById/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"UsuariosApi",
+								"GetUsuarioById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"Usuario Teste\",\r\n    \"Email\": \"usuariospostmantest@gmail.com\",\r\n    \"Senha\": \"Teste123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5067/api/UsuariosApi/CreateUsuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"UsuariosApi",
+								"CreateUsuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 2,\r\n    \"Nome\": \"Usuario Teste\",\r\n    \"Email\": \"usuariosteste@gmail.com\",\r\n    \"Senha\": \"Teste123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5067/api/UsuariosApi/UpdateUsuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"UsuariosApi",
+								"UpdateUsuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 2,\r\n    \"Titulo\": \"Tarefa Postman Editadaa\",\r\n    \"Descricao\": \"Descricao da Tarefa no Postman Editadaa\",\r\n    \"Estado\": 2,\r\n    \"UsuarioId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5067/api/UsuariosApi/DeleteUsuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5067",
+							"path": [
+								"api",
+								"UsuariosApi",
+								"DeleteUsuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": []
+		}
+	]
+}
